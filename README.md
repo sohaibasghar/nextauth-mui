@@ -67,6 +67,11 @@
    ```bash
    npx prisma generate
    ```
+3. To push the migration:
+
+   ```bash
+   npx prisma db push
+   ```
 
 ## Environment Variables
 
