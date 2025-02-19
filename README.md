@@ -9,8 +9,8 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/sohaibasghar/bookshelf.git
-   cd bookshelf
+   git clone https://github.com/sohaibasghar/nextauth-mui.git
+   cd nextauth-mui
    ```
 
 2. Install the dependencies:
