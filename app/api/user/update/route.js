@@ -4,16 +4,12 @@ import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
 import { authOptions } from '../../auth/[...nextauth]/route';
 
-
 export async function PUT(request) {
   try {
     const session = await getServerSession(authOptions);
 
     if (!session) {
-      return NextResponse.json(
-        { message: 'Unauthorized' },
-        { status: 401 }
-      );
+      return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
     const data = await request.json();
@@ -24,20 +20,14 @@ export async function PUT(request) {
     });
 
     if (!user) {
-      return NextResponse.json(
-        { message: 'User not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ message: 'User not found' }, { status: 404 });
     }
 
     // If trying to change password, verify current password
     if (newPassword) {
       const isValid = await bcrypt.compare(currentPassword, user.password);
       if (!isValid) {
-        return NextResponse.json(
-          { message: 'Current password is incorrect' },
-          { status: 400 }
-        );
+        return NextResponse.json({ message: 'Current password is incorrect' }, { status: 400 });
       }
     }
 
@@ -65,9 +55,6 @@ export async function PUT(request) {
     });
   } catch (error) {
     console.error('Profile update error:', error);
-    return NextResponse.json(
-      { message: 'Something went wrong' },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: 'Something went wrong' }, { status: 500 });
   }
-} 
+}

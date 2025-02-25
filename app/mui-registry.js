@@ -70,4 +70,4 @@ export default function MUIRegistry({ children }) {
       </ThemeProvider>
     </CacheProvider>
   );
-} 
+}

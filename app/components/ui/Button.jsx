@@ -22,4 +22,4 @@ const Button = styled(MuiButton)(({ theme }) => ({
   },
 }));
 
-export default Button; 
+export default Button;

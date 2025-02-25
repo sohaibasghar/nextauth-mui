@@ -22,7 +22,7 @@ export default function Profile() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -36,7 +36,7 @@ export default function Profile() {
   useEffect(() => {
     if (session?.user) {
       console.log(session.user);
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         firstName: session.user.firstName || '',
         lastName: session.user.lastName || '',
@@ -96,7 +96,7 @@ export default function Profile() {
       });
 
       setSuccess('Profile updated successfully');
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         currentPassword: '',
         newPassword: '',
@@ -159,7 +159,7 @@ export default function Profile() {
           <Typography variant="h6" color="text.primary" sx={{ mb: 2, fontWeight: 600 }}>
             Personal Information
           </Typography>
-          
+
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -229,17 +229,11 @@ export default function Profile() {
             onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
           />
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3 }}
-            disabled={loading}
-          >
+          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3 }} disabled={loading}>
             {loading ? 'Saving Changes...' : 'Save Changes'}
           </Button>
         </Box>
       </Paper>
     </Container>
   );
-} 
+}

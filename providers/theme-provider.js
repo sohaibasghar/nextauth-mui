@@ -14,4 +14,4 @@ export function ThemeProvider({ children }) {
       </MUIThemeProvider>
     </EmotionCacheProvider>
   );
-} 
+}

@@ -12,10 +12,7 @@ export async function POST(request) {
     });
 
     if (existingUser) {
-      return NextResponse.json(
-        { message: 'User already exists' },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: 'User already exists' }, { status: 400 });
     }
 
     // Hash password
@@ -31,15 +28,9 @@ export async function POST(request) {
       },
     });
 
-    return NextResponse.json(
-      { message: 'User created successfully' },
-      { status: 201 }
-    );
+    return NextResponse.json({ message: 'User created successfully' }, { status: 201 });
   } catch (error) {
     console.error('Signup error:', error);
-    return NextResponse.json(
-      { message: 'Something went wrong' },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: 'Something went wrong' }, { status: 500 });
   }
-} 
+}

@@ -13,11 +13,7 @@ import {
   IconButton,
   Link as MuiLink,
 } from '@mui/material';
-import {
-  Visibility,
-  VisibilityOff,
-  Email as EmailIcon,
-} from '@mui/icons-material';
+import { Visibility, VisibilityOff, Email as EmailIcon } from '@mui/icons-material';
 import TextField from '@/app/components/ui/TextField';
 
 export default function Login() {
@@ -92,9 +88,7 @@ export default function Login() {
           autoComplete="email"
           autoFocus
           value={formData.email}
-          onChange={(e) =>
-            setFormData({ ...formData, email: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -114,9 +108,7 @@ export default function Login() {
           id="password"
           autoComplete="current-password"
           value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

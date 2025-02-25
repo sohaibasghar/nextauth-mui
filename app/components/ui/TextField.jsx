@@ -6,11 +6,7 @@ import { styled } from '@mui/material/styles';
 const TextField = styled(MuiTextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
     borderRadius: '0.5rem',
-    transition: theme.transitions.create([
-      'border-color',
-      'background-color',
-      'box-shadow',
-    ]),
+    transition: theme.transitions.create(['border-color', 'background-color', 'box-shadow']),
     '&:hover': {
       backgroundColor: 'transparent',
     },
@@ -32,4 +28,4 @@ const TextField = styled(MuiTextField)(({ theme }) => ({
   },
 }));
 
-export default TextField; 
+export default TextField;

@@ -24,4 +24,4 @@ export default function EmotionCacheProvider({ children }) {
   });
 
   return <CacheProvider value={cache}>{children}</CacheProvider>;
-} 
+}

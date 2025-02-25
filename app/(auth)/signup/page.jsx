@@ -88,9 +88,7 @@ export default function SignUp() {
               name="firstName"
               autoComplete="given-name"
               value={formData.firstName}
-              onChange={(e) =>
-                setFormData({ ...formData, firstName: e.target.value })
-              }
+              onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -103,9 +101,7 @@ export default function SignUp() {
               name="lastName"
               autoComplete="family-name"
               value={formData.lastName}
-              onChange={(e) =>
-                setFormData({ ...formData, lastName: e.target.value })
-              }
+              onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
             />
           </Grid>
         </Grid>
@@ -132,9 +128,7 @@ export default function SignUp() {
           id="password"
           autoComplete="new-password"
           value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

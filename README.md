@@ -58,6 +58,7 @@
    ```
 
    This command will:
+
    - Create a new migration file in the `prisma/migrations` directory.
    - Apply the migration to your database.
    - Generate the Prisma Client.
@@ -67,6 +68,7 @@
    ```bash
    npx prisma generate
    ```
+
 3. To push the migration:
 
    ```bash

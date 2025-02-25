@@ -4,8 +4,8 @@ import { Box, Container, Paper } from '@mui/material';
 
 export default function AuthLayout({ children }) {
   return (
-    <Box 
-      sx={{ 
+    <Box
+      sx={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -30,4 +30,4 @@ export default function AuthLayout({ children }) {
       </Container>
     </Box>
   );
-} 
+}
