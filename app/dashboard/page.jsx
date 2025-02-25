@@ -57,7 +57,7 @@ export default function Dashboard() {
           fontSize: { xs: '2rem', sm: '3rem' }, // Responsive font size
         }}
       >
-        Hey, Welcome, {session?.user.firstName}!
+        Hey, {session?.user.firstName}!
       </Typography>
     </Container>
   );

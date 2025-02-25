@@ -17,7 +17,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 export default function Profile() {
-  const { data: session, update: updateSession } = useSession();
+  const { data: session, update } = useSession();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -85,9 +85,8 @@ export default function Profile() {
         throw new Error(data.message || 'Something went wrong');
       }
 
-      // Update session with new user data
-      await updateSession({
-        ...session,
+      // Update the session
+      await update({
         user: {
           ...session?.user,
           firstName: formData.firstName,
@@ -103,7 +102,6 @@ export default function Profile() {
         confirmPassword: '',
       }));
 
-      // Force a router refresh to update all components
       router.refresh();
     } catch (error) {
       setError(error.message);

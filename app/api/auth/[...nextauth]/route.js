@@ -49,22 +49,29 @@ export const authOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
+      // Initial sign in
       if (user) {
         token.id = user.id;
         token.email = user.email;
         token.firstName = user.firstName;
         token.lastName = user.lastName;
       }
+
+      // Handle session update
+      if (trigger === 'update') {
+        return { ...token, ...session.user };
+      }
+
       return token;
     },
     async session({ session, token }) {
-      if (token) {
-        session.user.id = token.id;
-        session.user.email = token.email;
-        session.user.firstName = token.firstName;
-        session.user.lastName = token.lastName;
-      }
+      session.user = {
+        id: token.id,
+        email: token.email,
+        firstName: token.firstName,
+        lastName: token.lastName,
+      };
       return session;
     },
   },
