@@ -14,9 +14,6 @@ import {
 } from '@mui/material';
 import { signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { Home } from '@mui/icons-material';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme } from '../theme/ThemeProvider';
 
 export default function Header() {
@@ -74,11 +71,7 @@ export default function Header() {
               cursor: 'pointer',
             }}
             onClick={() => router.push('/dashboard')}
-          >
-            <IconButton edge="start" color="primary" sx={{ p: 0, mr: 2 }}>
-              <Home />
-            </IconButton>
-          </Box>
+          ></Box>
 
           {session?.user && (
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -160,7 +153,7 @@ export default function Header() {
               </Menu>
             </Box>
           )}
-          <IconButton
+          {/* <IconButton
             onClick={toggleTheme}
             size="small"
             sx={{
@@ -176,7 +169,7 @@ export default function Header() {
             ) : (
               <Brightness4Icon sx={{ color: 'primary.main' }} />
             )}
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </Container>
     </AppBar>

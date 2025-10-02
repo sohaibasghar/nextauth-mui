@@ -12,9 +12,6 @@ export default function Dashboard() {
         maxWidth="sm"
         sx={{
           flex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
         }}
       >
         <Typography>Loading...</Typography>
@@ -39,26 +36,15 @@ export default function Dashboard() {
   }
 
   return (
-    <Container
-      maxWidth="sm"
+    <Typography
+      variant="h3"
+      component="h1"
       sx={{
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        fontWeight: 600,
+        fontSize: { xs: '2rem', sm: '3rem' }, // Responsive font size
       }}
     >
-      <Typography
-        variant="h3"
-        component="h1"
-        sx={{
-          fontWeight: 600,
-          textAlign: 'center',
-          fontSize: { xs: '2rem', sm: '3rem' }, // Responsive font size
-        }}
-      >
-        Hey, {session?.user.firstName}!
-      </Typography>
-    </Container>
+      Hey, {session?.user.firstName}!
+    </Typography>
   );
 }

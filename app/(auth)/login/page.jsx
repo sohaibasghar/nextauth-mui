@@ -90,8 +90,8 @@ export default function Login() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
+            endAdornment: (
+              <InputAdornment position="end">
                 <EmailIcon />
               </InputAdornment>
             ),

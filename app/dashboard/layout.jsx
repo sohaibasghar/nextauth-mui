@@ -2,24 +2,31 @@
 
 import { Box } from '@mui/material';
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 export default function DashboardLayout({ children }) {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Header />
+    <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+      <Sidebar />
       <Box
-        component="main"
         sx={{
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
-          height: 'calc(100vh - 64px)', // Subtract header height
-          '@media (max-width: 600px)': {
-            height: 'calc(100vh - 56px)', // Adjust for mobile header height
-          },
+          minHeight: '100vh',
         }}
       >
-        {children}
+        <Header />
+        <Box
+          component="main"
+          sx={{
+            flex: 1,
+            p: 3,
+            pt: { xs: 8, sm: 3 }, // Extra top padding on mobile for menu button
+          }}
+        >
+          {children}
+        </Box>
       </Box>
     </Box>
   );
